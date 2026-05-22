@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape") lightbox.classList.remove("active");
   });
-  
+
   const backToTop = document.getElementById("backToTop");
   const impressionCard = document.getElementById("impressionCard");
   const impressionClose = document.getElementById("impressionClose");
@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let impressionShown = false;
   let waitingForTop = false;
 
-// Step 1: detect footer → show back to top button
+  // Step 1: detect footer → show back to top button
   function hideImpressionCard() {
     impressionCard.classList.remove("visible");
     impressionCard.classList.add("hidden");
@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", () => {
     footerObserver.observe(footer);
   }
 
-// Step 2: click back to top → scroll up → show impression card
+  // Step 2: click back to top → scroll up → show impression card
   if (backToTop && impressionCard && footer) {
     backToTop.addEventListener("click", () => {
       waitingForTop = true;
@@ -221,19 +221,21 @@ document.addEventListener("DOMContentLoaded", () => {
       showCardWhenTopIsReached();
     });
 
-    window.addEventListener("scroll", showCardWhenTopIsReached, { passive: true });
+    window.addEventListener("scroll", showCardWhenTopIsReached, {
+      passive: true,
+    });
 
     if ("onscrollend" in window) {
       window.addEventListener("scrollend", showCardWhenTopIsReached);
     }
   }
 
-// Step 3: close button
+  // Step 3: close button
   if (impressionClose && impressionCard) {
     impressionClose.addEventListener("click", hideImpressionCard);
   }
 
-// Step 4: get in touch → close card after short delay
+  // Step 4: get in touch → close card after short delay
   if (impressionBtn && impressionCard) {
     impressionBtn.addEventListener("click", () => {
       setTimeout(hideImpressionCard, 600);

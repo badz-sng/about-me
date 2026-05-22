@@ -2,343 +2,364 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emmanuel Sunga — Software Engineer</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
-  <link rel="icon"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' style='background:%237c6bff;border-radius:20px'><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='52' font-family='system-ui' font-weight='700' fill='white'>ES</text></svg>">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmanuel Sunga — Software Engineer</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' style='background:%237c6bff;border-radius:20px'><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='52' font-family='system-ui' font-weight='700' fill='white'>ES</text></svg>">
 </head>
 
 <body data-theme="dark">
 
-  <canvas id="bg-canvas"></canvas>
+    <canvas id="bg-canvas"></canvas>
 
-  <nav>
-    <a class="nav-logo" href="#hero"><span>Hello</span> there!</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">☀️</button>
-    </div>
-  </nav>
-
-  <div class="page">
-
-    <!-- HERO -->
-    <div class="hero" id="hero">
-      <div class="hero-greeting">Available for work</div>
-      <h1 class="hero-name">
-        Emmanuel<br>
-        <span class="accent">Sunga.</span>
-      </h1>
-      <p class="hero-role">Full-Stack Laravel Developer</p>
-      <p class="hero-desc">
-        Results-driven developer building enterprise-level systems — from Student Information Systems to document
-        management platforms. Proficient in Laravel, Vue.js, and RESTful APIs.
-      </p>
-      <div class="hero-btns">
-        <a href="#projects" class="btn-primary">View my work ↓</a>
-        <a href="#contact" class="btn-outline">Get in touch →</a>
-      </div>
-      <div class="hero-scroll">↓ &nbsp; scroll down</div>
-    </div>
-
-    <!-- ABOUT -->
-    <section id="about">
-      <p class="section-label">About me</p>
-      <h2 class="section-title">Building systems that<br>actually matter.</h2>
-      <p class="section-sub">Developer by craft, problem-solver by instinct. Based in Apalit, Pampanga — building tools
-        that serve real institutions and real people.</p>
-
-      <div class="bento-grid fade-in">
-        <div class="bento-card glass wide">
-          <div class="accent-glow"></div>
-          <div class="bento-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
-          <h3>Education</h3>
-          <p>BS Information Systems, La Verdad Christian College (2024) — Best in Capstone Awardee for Incident Report
-            IMS. Also holds IBM Project Management and Cisco Cybersecurity certifications.</p>
+    <nav>
+        <a class="nav-logo" href="#hero"><span>Hello</span> there!</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">☀️</button>
         </div>
+    </nav>
 
-        <div class="bento-card glass">
-          <span class="bento-stat">5+</span>
-          <h3>Years coding</h3>
-          <p>From PHP internals to full Laravel enterprise apps.</p>
-        </div>
+    <div class="page">
 
-        <div class="bento-card glass wide">
-          <div class="bento-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
-          <h3>Current role</h3>
-          <p>Systems Developer at La Verdad Christian College — maintaining a large-scale multi-module Student
-            Information System used by hundreds of students, faculty, and staff daily.</p>
-        </div>
-
-        <div class="bento-card glass">
-          <span class="bento-stat">6+</span>
-          <h3>Projects shipped</h3>
-          <p>Production apps across document management, incident reporting, loan systems, and more.</p>
-        </div>
-
-        <div class="bento-card glass">
-          <div class="bento-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
-          <h3>Location</h3>
-          <p>Apalit, Pampanga<br>Open to remote work</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <p class="section-label">Technical skills</p>
-      <h2 class="section-title">Tools I reach for.</h2>
-      <p class="section-sub">A curated set of languages, frameworks, and platforms I work with regularly — from backend
-        APIs to front-end interfaces.</p>
-
-      <div class="skills-wrapper fade-in">
-        <div class="skill-row forward" id="row1"></div>
-        <div class="skill-row reverse" id="row2"></div>
-        <div class="skill-row forward2" id="row3"></div>
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <p class="section-label">Work experience</p>
-      <h2 class="section-title">Where I've made<br>an impact.</h2>
-
-      <div class="exp-list fade-in">
-
-        <div class="exp-card glass">
-          <div>
-            <p class="exp-company">La Verdad Christian College</p>
-            <p class="exp-role">Systems Developer</p>
-            <ul class="exp-bullets">
-              <li>Develop, maintain, and enhance a large-scale multi-module Student Information System.</li>
-              <li>Implement role-based access control, automated grade progression, and document management modules.
-              </li>
-              <li>Collaborate with department heads to gather requirements and deliver institutional features.</li>
-            </ul>
-          </div>
-          <div style="text-align:right">
-            <p class="exp-date">Mar 2026 – Present</p>
-            <span class="exp-current">Current</span>
-          </div>
-        </div>
-
-        <div class="exp-card glass">
-          <div>
-            <p class="exp-company">La Verdad Christian College</p>
-            <p class="exp-role">SIS Support Staff</p>
-            <ul class="exp-bullets">
-              <li>Tested and validated system features prior to deployment, ensuring quality and stability.</li>
-              <li>Conducted user training sessions for non-technical staff and faculty.</li>
-              <li>Managed bug reports and coordinated resolutions with the development team.</li>
-            </ul>
-          </div>
-          <div style="text-align:right">
-            <p class="exp-date">Jan 2025 – Mar 2026</p>
-          </div>
-        </div>
-
-        <div class="exp-card glass">
-          <div>
-            <p class="exp-company">Kaizo Enterprises Co.</p>
-            <p class="exp-role">Systems Engineer</p>
-            <ul class="exp-bullets">
-              <li>Led maintenance and continuous improvement of a core web-based Information Management System.</li>
-              <li>Mentored junior developers and facilitated smooth knowledge transfer and team handover.</li>
-            </ul>
-          </div>
-          <div style="text-align:right">
-            <p class="exp-date">Apr 2024 – Sep 2024</p>
-          </div>
-        </div>
-
-        <div class="exp-card glass">
-          <div>
-            <p class="exp-company">Kaizo Enterprises Co.</p>
-            <p class="exp-role">Systems Engineer Intern</p>
-            <ul class="exp-bullets">
-              <li>Planned, developed, tested, and deployed a foundational web-based IMS from scratch.</li>
-              <li>Self-hosted on an in-house Ubuntu Server, managing the full deployment pipeline.</li>
-            </ul>
-          </div>
-          <div style="text-align:right">
-            <p class="exp-date">Feb 2024 – Apr 2024</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <div class="divider"></div>
-
-    <!-- PROJECTS -->
-    <section id="projects">
-      <p class="section-label">Notable projects</p>
-      <h2 class="section-title">Things I've built.</h2>
-
-      <div class="projects-grid fade-in">
-
-        <div class="project-card glass featured">
-          <div>
-            <p class="project-year">2024 • Best in Capstone</p>
-            <p class="project-name">Incident Report IMS</p>
-            <p class="project-desc">Dual-platform system (mobile + web) for public incident reporting and management —
-              awarded Best in Capstone at La Verdad Christian College. Handles real-time reports, status tracking, and
-              admin workflows.</p>
-            <div class="project-tags">
-              <span class="tag">React</span>
-              <span class="tag">Laravel</span>
-              <span class="tag">MySQL</span>
-              <span class="tag">Mobile</span>
+        <!-- HERO -->
+        <div class="hero" id="hero">
+            <div class="hero-greeting">Available for work</div>
+            <h1 class="hero-name">
+                Emmanuel<br>
+                <span class="accent">Sunga.</span>
+            </h1>
+            <p class="hero-role">Full-Stack Laravel Developer</p>
+            <p class="hero-desc">
+                Results-driven developer building enterprise-level systems — from Student Information Systems to
+                document
+                management platforms. Proficient in Laravel, Vue.js, and RESTful APIs.
+            </p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn-primary">View my work ↓</a>
+                <a href="#contact" class="btn-outline">Get in touch →</a>
+                <a href="Emmanuel Sunga - Software Engineer.pdf" target="_blank" class="btn-primary" download>Download CV</a>
             </div>
-          </div>
-          <div class="project-visual">
-            <img src="irims.png" alt="Incident Report IMS" class="zoomable">
-          </div>
-          <span class="project-badge">Award</span>
+            <div class="hero-scroll">↓ &nbsp; scroll down</div>
         </div>
 
-        <div class="project-card glass">
-          <p class="project-year">2025</p>
-          <p class="project-name">FilePilot</p>
-          <p class="project-desc">Document Management IS for a Registrar's Office — automates status updates to document
-            requestors and digitizes the entire request workflow.</p>
-          <div class="project-tags">
-            <span class="tag">Laravel</span>
-            <span class="tag">MySQL</span>
-          </div>
-        </div>
+        <!-- ABOUT -->
+        <section id="about">
+            <p class="section-label">About me</p>
+            <h2 class="section-title">Building systems that<br>actually matter.</h2>
+            <p class="section-sub">Developer by craft, problem-solver by instinct. Based in Apalit, Pampanga — building
+                tools
+                that serve real institutions and real people.</p>
 
-        <div class="project-card glass">
-          <p class="project-year">2024</p>
-          <p class="project-name">Loan Management System</p>
-          <p class="project-desc">Web-based system for scheduling and managing loan records with automated ledger report
-            generation for financial transparency.</p>
-          <div class="project-tags">
-            <span class="tag">Laravel</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">MySQL</span>
-          </div>
-        </div>
+            <div class="bento-grid fade-in">
+                <div class="bento-card glass wide">
+                    <div class="accent-glow"></div>
+                    <div class="bento-icon"><i class="ti ti-school" aria-hidden="true"></i></div>
+                    <h3>Education</h3>
+                    <p>BS Information Systems, La Verdad Christian College (2024) — Best in Capstone Awardee for
+                        Incident Report
+                        IMS. Also holds IBM Project Management and Cisco Cybersecurity certifications.</p>
+                </div>
 
-        <div class="project-card glass">
-          <p class="project-year">2023</p>
-          <p class="project-name">Deskr</p>
-          <p class="project-desc">Hot-desking platform for managing work desk allocation across multiple work
-            environments — clean scheduling UI with multi-location support.</p>
-          <div class="project-tags">
-            <span class="tag">React</span>
-            <span class="tag">Laravel</span>
-            <span class="tag">MySQL</span>
-          </div>
-        </div>
+                <div class="bento-card glass">
+                    <span class="bento-stat">5+</span>
+                    <h3>Years coding</h3>
+                    <p>From PHP internals to full Laravel enterprise apps.</p>
+                </div>
 
-        <div class="project-card glass">
-          <p class="project-year">2022</p>
-          <p class="project-name">Keep</p>
-          <p class="project-desc">Web-based password manager with custom user password hashing — built with a focus on
-            security primitives and zero third-party auth libraries.</p>
-          <div class="project-tags">
-            <span class="tag">PHP</span>
-            <span class="tag">MySQL</span>
-            <span class="tag">Security</span>
-          </div>
-        </div>
+                <div class="bento-card glass wide">
+                    <div class="bento-icon"><i class="ti ti-building" aria-hidden="true"></i></div>
+                    <h3>Current role</h3>
+                    <p>Systems Developer at La Verdad Christian College — maintaining a large-scale multi-module Student
+                        Information System used by hundreds of students, faculty, and staff daily.</p>
+                </div>
 
-      </div>
-    </section>
+                <div class="bento-card glass">
+                    <span class="bento-stat">6+</span>
+                    <h3>Projects shipped</h3>
+                    <p>Production apps across document management, incident reporting, loan systems, and more.</p>
+                </div>
 
-    <div class="divider"></div>
-
-    <!-- CONTACT -->
-    <section id="contact">
-      <p class="section-label">Contact</p>
-      <h2 class="section-title">Let's build something.</h2>
-
-      <div class="contact-grid fade-in">
-        <div class="contact-info glass">
-          <h2>Get in touch</h2>
-          <p>Whether it's a project collaboration, a role you think I'd be a good fit for, or just a chat — my inbox is
-            open.</p>
-          <div class="contact-links">
-            <a href="mailto:emmanuel.fullstack.dev@gmail.com" class="contact-link">
-              <span class="contact-link-icon"><i class="ti ti-mail" aria-hidden="true"></i></span>
-              <span>emmanuel.fullstack.dev@gmail.com</span>
-            </a>
-            <a href="https://github.com/badz-sng" class="contact-link">
-              <span class="contact-link-icon"><i class="ti ti-brand-github" aria-hidden="true"></i></span>
-              <span>GitHub</span>
-            </a>
-            <a href="https://linkedin.com/in/emmanuel-sunga" class="contact-link">
-              <span class="contact-link-icon"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></span>
-              <span>LinkedIn</span>
-            </a>
-            <a href="https://ph.jobstreet.com/profiles/emmanuel-sunga-TD4rhTdLDx" class="contact-link">
-              <span class="contact-link-icon"><i class="ti ti-brand-linkedin" aria-hidden="true"></i></span>
-              <span>JobStreet</span>
-            </a>
-            <div class="contact-link" style="cursor:default">
-              <span class="contact-link-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></span>
-              <span>Apalit, Pampanga — Open to Remote</span>
+                <div class="bento-card glass">
+                    <div class="bento-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></div>
+                    <h3>Location</h3>
+                    <p>Apalit, Pampanga<br>Open to remote work</p>
+                </div>
             </div>
-          </div>
-        </div>
+        </section>
 
-        <div class="contact-cta glass">
-          <div class="contact-link" style="cursor:default">
-            <span class="contact-link-icon"><i class="ti ti-phone" aria-hidden="true"></i></span>
-            <span>0947-552-9362</span>
-          </div>
-          <div class="contact-link" style="cursor:default">
-            <span class="contact-link-icon"><i class="ti ti-phone" aria-hidden="true"></i></span>
-            <span>0963-403-5892</span>
-          </div>
-          <p>Available for full-time roles, freelance engagements, and consulting. Response time is usually within 24
-            hours.</p>
-          <a href="mailto:emmanuel.fullstack.dev@gmail.com" class="btn-primary">Send a message →</a>
-        </div>
-      </div>
-    </section>
+        <div class="divider"></div>
 
-  </div>
+        <!-- SKILLS -->
+        <section id="skills">
+            <p class="section-label">Technical skills</p>
+            <h2 class="section-title">Tools I reach for.</h2>
+            <p class="section-sub">A curated set of languages, frameworks, and platforms I work with regularly — from
+                backend
+                APIs to front-end interfaces.</p>
 
-  <footer>
-    © 2025 Emmanuel Sunga — I hope we can get in touch!
-  </footer>
+            <div class="skills-wrapper fade-in">
+                <div class="skill-row forward" id="row1"></div>
+                <div class="skill-row reverse" id="row2"></div>
+                <div class="skill-row forward2" id="row3"></div>
+            </div>
+        </section>
 
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <div class="lightbox-backdrop"></div>
-    <img src="" alt="" class="lightbox-img">
-  </div>
+        <div class="divider"></div>
 
-<!-- BACK TO TOP BUTTON -->
-<button class="back-to-top" id="backToTop" aria-label="Back to top">
-  <i class="ti ti-arrow-up"></i>
-</button>
+        <!-- EXPERIENCE -->
+        <section id="experience">
+            <p class="section-label">Work experience</p>
+            <h2 class="section-title">Where I've made<br>an impact.</h2>
 
-<!-- IMPRESSION CARD -->
-<div class="impression-card" id="impressionCard">
-  <p class="impression-question">How was my first impression?</p>
-  <p class="impression-sub">I'd love to hear from you.</p>
-  <a href="#contact" class="btn-primary" id="impressionBtn">Get in touch →</a>
-  <button class="impression-close" id="impressionClose" aria-label="Close">
-    <i class="ti ti-x"></i>
-  </button>
-</div>
+            <div class="exp-list fade-in">
 
-  <script src="scripts.js"></script>
+                <div class="exp-card glass">
+                    <div>
+                        <p class="exp-company">La Verdad Christian College</p>
+                        <p class="exp-role">Systems Developer</p>
+                        <ul class="exp-bullets">
+                            <li>Develop, maintain, and enhance a large-scale multi-module Student Information System.
+                            </li>
+                            <li>Implement role-based access control, automated grade progression, and document
+                                management modules.
+                            </li>
+                            <li>Collaborate with department heads to gather requirements and deliver institutional
+                                features.</li>
+                        </ul>
+                    </div>
+                    <div style="text-align:right">
+                        <p class="exp-date">Mar 2026 – Present</p>
+                        <span class="exp-current">Current</span>
+                    </div>
+                </div>
+
+                <div class="exp-card glass">
+                    <div>
+                        <p class="exp-company">La Verdad Christian College</p>
+                        <p class="exp-role">SIS Support Staff</p>
+                        <ul class="exp-bullets">
+                            <li>Tested and validated system features prior to deployment, ensuring quality and
+                                stability.</li>
+                            <li>Conducted user training sessions for non-technical staff and faculty.</li>
+                            <li>Managed bug reports and coordinated resolutions with the development team.</li>
+                        </ul>
+                    </div>
+                    <div style="text-align:right">
+                        <p class="exp-date">Jan 2025 – Mar 2026</p>
+                    </div>
+                </div>
+
+                <div class="exp-card glass">
+                    <div>
+                        <p class="exp-company">Kaizo Enterprises Co.</p>
+                        <p class="exp-role">Systems Engineer</p>
+                        <ul class="exp-bullets">
+                            <li>Led maintenance and continuous improvement of a core web-based Information Management
+                                System.</li>
+                            <li>Mentored junior developers and facilitated smooth knowledge transfer and team handover.
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="text-align:right">
+                        <p class="exp-date">Apr 2024 – Sep 2024</p>
+                    </div>
+                </div>
+
+                <div class="exp-card glass">
+                    <div>
+                        <p class="exp-company">Kaizo Enterprises Co.</p>
+                        <p class="exp-role">Systems Engineer Intern</p>
+                        <ul class="exp-bullets">
+                            <li>Planned, developed, tested, and deployed a foundational web-based IMS from scratch.</li>
+                            <li>Self-hosted on an in-house Ubuntu Server, managing the full deployment pipeline.</li>
+                        </ul>
+                    </div>
+                    <div style="text-align:right">
+                        <p class="exp-date">Feb 2024 – Apr 2024</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- PROJECTS -->
+        <section id="projects">
+            <p class="section-label">Notable projects</p>
+            <h2 class="section-title">Things I've built.</h2>
+
+            <div class="projects-grid fade-in">
+
+                <div class="project-card glass featured">
+                    <div>
+                        <p class="project-year">2024 • Best in Capstone</p>
+                        <p class="project-name">Incident Report IMS</p>
+                        <p class="project-desc">Dual-platform system (mobile + web) for public incident reporting and
+                            management —
+                            awarded Best in Capstone at La Verdad Christian College. Handles real-time reports, status
+                            tracking, and
+                            admin workflows.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <img src="irims.png" alt="Incident Report IMS" class="zoomable">
+                    </div>
+                    <span class="project-badge">Award</span>
+                </div>
+
+                <div class="project-card glass">
+                    <p class="project-year">2025</p>
+                    <p class="project-name">FilePilot</p>
+                    <p class="project-desc">Document Management IS for a Registrar's Office — automates status updates
+                        to document
+                        requestors and digitizes the entire request workflow.</p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card glass">
+                    <p class="project-year">2024</p>
+                    <p class="project-name">Loan Management System</p>
+                    <p class="project-desc">Web-based system for scheduling and managing loan records with automated
+                        ledger report
+                        generation for financial transparency.</p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card glass">
+                    <p class="project-year">2023</p>
+                    <p class="project-name">Deskr</p>
+                    <p class="project-desc">Hot-desking platform for managing work desk allocation across multiple work
+                        environments — clean scheduling UI with multi-location support.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card glass">
+                    <p class="project-year">2022</p>
+                    <p class="project-name">Keep</p>
+                    <p class="project-desc">Web-based password manager with custom user password hashing — built with a
+                        focus on
+                        security primitives and zero third-party auth libraries.</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <div class="divider"></div>
+
+        <!-- CONTACT -->
+        <section id="contact">
+            <p class="section-label">Contact</p>
+            <h2 class="section-title">Let's build something.</h2>
+
+            <div class="contact-grid fade-in">
+                <div class="contact-info glass">
+                    <h2>Get in touch</h2>
+                    <p>Whether it's a project collaboration, a role you think I'd be a good fit for, or just a chat — my
+                        inbox is
+                        open.</p>
+                    <div class="contact-links">
+                        <a href="mailto:emmanuel.fullstack.dev@gmail.com" class="contact-link">
+                            <span class="contact-link-icon"><i class="ti ti-mail" aria-hidden="true"></i></span>
+                            <span>emmanuel.fullstack.dev@gmail.com</span>
+                        </a>
+                        <a href="https://github.com/badz-sng" class="contact-link">
+                            <span class="contact-link-icon"><i class="ti ti-brand-github" aria-hidden="true"></i></span>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://linkedin.com/in/emmanuel-sunga" class="contact-link">
+                            <span class="contact-link-icon"><i class="ti ti-brand-linkedin"
+                                    aria-hidden="true"></i></span>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://ph.jobstreet.com/profiles/emmanuel-sunga-TD4rhTdLDx" class="contact-link">
+                            <span class="contact-link-icon"><i class="ti ti-brand-linkedin"
+                                    aria-hidden="true"></i></span>
+                            <span>JobStreet</span>
+                        </a>
+                        <div class="contact-link" style="cursor:default">
+                            <span class="contact-link-icon"><i class="ti ti-map-pin" aria-hidden="true"></i></span>
+                            <span>Apalit, Pampanga — Open to Remote</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-cta glass">
+                    <div class="contact-link" style="cursor:default">
+                        <span class="contact-link-icon"><i class="ti ti-phone" aria-hidden="true"></i></span>
+                        <span>0947-552-9362</span>
+                    </div>
+                    <div class="contact-link" style="cursor:default">
+                        <span class="contact-link-icon"><i class="ti ti-phone" aria-hidden="true"></i></span>
+                        <span>0963-403-5892</span>
+                    </div>
+                    <p>Available for full-time roles, freelance engagements, and consulting. Response time is usually
+                        within 24
+                        hours.</p>
+                    <a href="mailto:emmanuel.fullstack.dev@gmail.com" class="btn-primary">Send a message →</a>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        © 2025 Emmanuel Sunga — I hope we can get in touch!
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-backdrop"></div>
+        <img src="" alt="" class="lightbox-img">
+    </div>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="ti ti-arrow-up"></i>
+    </button>
+
+    <!-- IMPRESSION CARD -->
+    <div class="impression-card" id="impressionCard">
+        <p class="impression-question">How was my first impression?</p>
+        <p class="impression-sub">I'd love to hear from you.</p>
+        <a href="#contact" class="btn-primary" id="impressionBtn">Get in touch →</a>
+        <button class="impression-close" id="impressionClose" aria-label="Close">
+            <i class="ti ti-x"></i>
+        </button>
+    </div>
+
+    <script src="scripts.js"></script>
 </body>
+
 </html>
