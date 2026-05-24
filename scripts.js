@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
   themeBtn.addEventListener("click", () => {
     isDark = !isDark;
     body.setAttribute("data-theme", isDark ? "dark" : "light");
-    themeBtn.textContent = isDark ? "☀️" : "🌙";
+    themeBtn.innerHTML = isDark ? "<i class=\"ti ti-sun-high\"></i>" : "<i class=\"ti ti-moon\"></i>";
   });
 
   // ============================================================
