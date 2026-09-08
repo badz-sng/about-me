@@ -20,7 +20,11 @@ document.addEventListener("DOMContentLoaded", () => {
     { label: "MVC Architecture", color: "#42b883" },
     { label: "Agile / Scrum", color: "#00b4d8" },
     { label: "VSCode", color: "#007acc" },
-    { label: "ClickUp / Jira", color: "#7c6bff" },
+    { label: "Jira", color: "#7c6bff" },
+    { label: "ClickUp", color: "#7c6bff" },   
+    { label: "ChatGPT", color: "#5854742f" },   
+    { label: "Claude AI", color: "#ff7300" }, 
+    { label: "Google Gemini", color: "#9809eb" },   
   ];
 
   function buildRow(container, items) {
