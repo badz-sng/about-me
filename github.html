@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Emmanuel Sunga, software engineer in Pampanga building Laravel, Vue.js, and React systems for institutions and everyday workflows." />
+    <title>GitHub activity | Emmanuel Sunga</title>
+    <script>
+        try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'; } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' style='background:%237c6bff;border-radius:20px'><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='52' font-family='system-ui' font-weight='700' fill='white'>ES</text></svg>">
+</head>
+
+<body data-theme="dark" id="page-top">
+
+    <span id="scroll-start" aria-hidden="true"></span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <nav id="primary-navigation">
+        <a class="nav-logo" href="index.html"><span>ES</span> / Emmanuel Sunga</a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="navigation" hidden><i class="ti ti-menu-2" aria-hidden="true"></i> Menu</button>
+        <ul class="nav-links" id="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="github.html" aria-current="page">GitHub</a></li>
+            <li><a href="quotation.html">Quotation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><i class="ti ti-sun" aria-hidden="true"></i></button>
+        </div>
+    </nav>
+
+    <aside class="floating-controls" id="floating-controls" aria-label="Quick navigation and theme" hidden>
+        <a class="floating-control" href="index.html" aria-label="Home"><i class="ti ti-home" aria-hidden="true"></i><span class="floating-label">Home</span></a>
+        <a class="floating-control" href="experience.html" aria-label="Experience"><i class="ti ti-briefcase" aria-hidden="true"></i><span class="floating-label">Experience</span></a>
+        <a class="floating-control" href="projects.html" aria-label="Projects"><i class="ti ti-code" aria-hidden="true"></i><span class="floating-label">Projects</span></a>
+        <a class="floating-control" href="github.html" aria-current="page" aria-label="GitHub"><i class="ti ti-brand-github" aria-hidden="true"></i><span class="floating-label">GitHub</span></a>
+        <a class="floating-control" href="quotation.html" aria-label="Quotation"><i class="ti ti-calculator" aria-hidden="true"></i><span class="floating-label">Quotation</span></a>
+        <a class="floating-control" href="contact.html" aria-label="Contact"><i class="ti ti-mail" aria-hidden="true"></i><span class="floating-label">Contact</span></a>
+        <button class="floating-control theme-btn" id="floating-theme-toggle" aria-label="Toggle theme"><i class="ti ti-sun" aria-hidden="true"></i><span class="floating-label">Change theme</span></button>
+    </aside>
+
+    <main class="page" id="main-content" tabindex="-1">
+        <section id="github" aria-labelledby="github-title">
+            <p class="section-label">GitHub activity</p>
+            <h1 class="section-title" id="github-title">Contributions over time.</h1>
+            <p class="section-sub">My GitHub contribution calendar. Each square represents a day; stronger shades indicate more contributions.</p>
+            <figure class="github-activity">
+                <div class="github-chart-scroll" tabindex="0" role="region" aria-label="GitHub contribution calendar, scroll horizontally on smaller screens">
+                    <a href="https://github.com/badz-sng" target="_blank" rel="noopener noreferrer" aria-label="View badz-sng contributions on GitHub">
+                        <img id="github-chart" src="https://ghchart.rshah.org/624592/badz-sng" width="663" height="104" loading="lazy" decoding="async" alt="GitHub contribution heatmap for badz-sng. Open GitHub for daily contribution details.">
+                    </a>
+                </div>
+                <p id="github-chart-error" class="quote-note" role="status" hidden>The contribution chart is temporarily unavailable. You can still view my activity on GitHub below.</p>
+                <figcaption><span>Contribution calendar · past year</span><a href="https://github.com/badz-sng" target="_blank" rel="noopener noreferrer"><i class="ti ti-brand-github" aria-hidden="true"></i> @badz-sng on GitHub <i class="ti ti-arrow-up-right" aria-hidden="true"></i></a></figcaption>
+            </figure>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Emmanuel Sunga <a href="#page-top" class="btn-text" id="back-to-top" hidden>Back to top <i class="ti ti-arrow-up" aria-hidden="true"></i></a>
+    </footer>
+
+
+    <dialog class="impression-dialog" id="impression-dialog" aria-labelledby="impression-title">
+        <button class="impression-close" aria-label="Close first impression popup">Close <i class="ti ti-x" aria-hidden="true"></i></button>
+        <p class="section-label">Thanks for taking a look</p>
+        <h2 id="impression-title">how's my first impression?</h2>
+        <a class="btn-primary" href="contact.html#contact" id="impression-contact">let's work together <i class="ti ti-arrow-up-right" aria-hidden="true"></i></a>
+    </dialog>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>

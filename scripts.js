@@ -1,248 +1,192 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // ============================================================
-  // SKILLS DATA — edit this array to add/remove/reorder skills
-  // ============================================================
-  const skills = [
-    { label: "PHP", color: "#7c6bff" },
-    { label: "Laravel", color: "#ff4e50" },
-    { label: "Vue.js", color: "#42b883" },
-    { label: "React.js", color: "#61dafb" },
-    { label: "JavaScript", color: "#f7df1e" },
-    { label: "Tailwind CSS", color: "#38bdf8" },
-    { label: "MySQL", color: "#4479a1" },
-    { label: "Docker", color: "#2496ed" },
-    { label: "Git", color: "#f05032" },
-    { label: "Ubuntu Server", color: "#e95420" },
-    { label: "RESTful APIs", color: "#7c6bff" },
-    { label: "Bootstrap", color: "#7952b3" },
-    { label: "HTML & CSS", color: "#e34f26" },
-    { label: "SQL", color: "#4479a1" },
-    { label: "MVC Architecture", color: "#42b883" },
-    { label: "Agile / Scrum", color: "#00b4d8" },
-    { label: "VSCode", color: "#007acc" },
-    { label: "Jira", color: "#7c6bff" },
-    { label: "ClickUp", color: "#7c6bff" },   
-    { label: "ChatGPT", color: "#5854742f" },   
-    { label: "Claude AI", color: "#ff7300" }, 
-    { label: "Google Gemini", color: "#9809eb" },   
-  ];
-
-  function buildRow(container, items) {
-    const doubled = [...items, ...items]; // duplicate for seamless loop
-    doubled.forEach((s) => {
-      const chip = document.createElement("div");
-      chip.className = "skill-chip";
-      chip.innerHTML = `<span class="skill-dot" style="background:${s.color}"></span>${s.label}`;
-      container.appendChild(chip);
-    });
-  }
-
-  buildRow(document.getElementById("row1"), skills.slice(0, 7));
-  buildRow(document.getElementById("row2"), skills.slice(5, 14));
-  buildRow(document.getElementById("row3"), skills.slice(10));
-
-  // ============================================================
-  // THEME TOGGLE
-  // ============================================================
-  const body = document.body;
-  const themeBtn = document.getElementById("theme-toggle");
-  let isDark = true;
-
-  themeBtn.addEventListener("click", () => {
-    isDark = !isDark;
-    body.setAttribute("data-theme", isDark ? "dark" : "light");
-    themeBtn.innerHTML = isDark ? "<i class=\"ti ti-sun-high\"></i>" : "<i class=\"ti ti-moon\"></i>";
-  });
-
-  // ============================================================
-  // ANIMATED BACKGROUND — canvas particles + soft orbs
-  // ============================================================
-  const canvas = document.getElementById("bg-canvas");
-  const ctx = canvas.getContext("2d");
-
-  function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  }
-  resizeCanvas();
-  window.addEventListener("resize", resizeCanvas);
-
-  const PARTICLE_COUNT = 60;
-  const particles = [];
-
-  function rand(min, max) {
-    return Math.random() * (max - min) + min;
-  }
-
-  for (let i = 0; i < PARTICLE_COUNT; i++) {
-    particles.push({
-      x: rand(0, window.innerWidth),
-      y: rand(0, window.innerHeight),
-      r: rand(1, 2.5),
-      vx: rand(-0.15, 0.15),
-      vy: rand(-0.15, 0.15),
-      alpha: rand(0.1, 0.4),
-    });
-  }
-
-  // Soft background orbs — tweak x/y (0–1 relative), r (radius), color (RGB)
-  const orbs = [
-    { x: 0.15, y: 0.2, r: 280, color: [124, 107, 255] },
-    { x: 0.85, y: 0.7, r: 220, color: [79, 195, 247] },
-    { x: 0.5, y: 0.55, r: 180, color: [167, 139, 250] },
-  ];
-
-  function drawFrame() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    const dark = body.getAttribute("data-theme") !== "light";
-    const particleColor = dark ? "200,200,255" : "80,80,180";
-
-    // Draw orbs
-    orbs.forEach((o) => {
-      const gx = o.x * canvas.width;
-      const gy = o.y * canvas.height;
-      const alpha = dark ? 0.08 : 0.06;
-      const g = ctx.createRadialGradient(gx, gy, 0, gx, gy, o.r);
-      g.addColorStop(0, `rgba(${o.color.join(",")},${alpha})`);
-      g.addColorStop(1, "transparent");
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.arc(gx, gy, o.r, 0, Math.PI * 2);
-      ctx.fill();
-    });
-
-    // Draw + move particles
-    particles.forEach((p) => {
-      p.x += p.vx;
-      p.y += p.vy;
-      if (p.x < 0) p.x = canvas.width;
-      if (p.x > canvas.width) p.x = 0;
-      if (p.y < 0) p.y = canvas.height;
-      if (p.y > canvas.height) p.y = 0;
-
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(${particleColor},${p.alpha})`;
-      ctx.fill();
-    });
-
-    requestAnimationFrame(drawFrame);
-  }
-
-  drawFrame();
-
-  // ============================================================
-  // FADE IN ON SCROLL
-  // ============================================================
-  const fadeEls = document.querySelectorAll(".fade-in");
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          e.target.classList.add("visible");
-          observer.unobserve(e.target);
-        }
-      });
-    },
-    { threshold: 0.1 },
-  );
-
-  fadeEls.forEach((el) => observer.observe(el));
-
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.querySelector(".lightbox-img");
-  const lightboxBackdrop = document.querySelector(".lightbox-backdrop");
-
-  document.querySelectorAll(".zoomable").forEach((img) => {
-    img.addEventListener("click", () => {
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-      lightbox.classList.add("active");
-    });
-  });
-
-  // close on backdrop click
-  lightboxBackdrop.addEventListener("click", () => {
-    lightbox.classList.remove("active");
-  });
-
-  // close on Escape key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") lightbox.classList.remove("active");
-  });
-
-  const backToTop = document.getElementById("backToTop");
-  const impressionCard = document.getElementById("impressionCard");
-  const impressionClose = document.getElementById("impressionClose");
-  const impressionBtn = document.getElementById("impressionBtn");
-  const footer = document.querySelector("footer");
-  let impressionShown = false;
-  let waitingForTop = false;
-
-  // Step 1: detect footer → show back to top button
-  function hideImpressionCard() {
-    impressionCard.classList.remove("visible");
-    impressionCard.classList.add("hidden");
-  }
-
-  function showImpressionCard() {
-    impressionShown = true;
-    waitingForTop = false;
-    impressionCard.classList.remove("hidden");
-    impressionCard.classList.add("visible");
-  }
-
-  function isAtTop() {
-    return window.scrollY <= 8;
-  }
-
-  function showCardWhenTopIsReached() {
-    if (!waitingForTop || impressionShown || !isAtTop()) return;
-    showImpressionCard();
-  }
-
-  if (backToTop && impressionCard && footer) {
-    const footerObserver = new IntersectionObserver(
-      (entries) => {
-        const footerIsVisible = entries.some((entry) => entry.isIntersecting);
-        backToTop.classList.toggle(
-          "visible",
-          footerIsVisible && !waitingForTop && !impressionShown,
-        );
-      },
-      { threshold: 0.1 },
-    );
-
-    footerObserver.observe(footer);
-  }
-
-  // Step 2: click back to top → scroll up → show impression card
-  if (backToTop && impressionCard && footer) {
-    backToTop.addEventListener("click", () => {
-      waitingForTop = true;
-      backToTop.classList.remove("visible");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      showCardWhenTopIsReached();
-    });
-
-    window.addEventListener("scroll", showCardWhenTopIsReached, {
-      passive: true,
-    });
-
-    if ("onscrollend" in window) {
-      window.addEventListener("scrollend", showCardWhenTopIsReached);
-    }
-  }
-
-  // Step 3: close button
-  if (impressionClose && impressionCard) {
-    impressionClose.addEventListener("click", hideImpressionCard);
-  }
-
-  // Step 4: get in touch → close card after short delay
-  if (impressionBtn && impressionCard) {
-    impressionBtn.addEventListener("click", () => {
-      setTimeout(hideImpressionCard, 600);
-    });
+const menu = document.querySelector('.menu-btn');
+const navigation = document.querySelector('.nav-links');
+menu.hidden = false;
+navigation.classList.add('enhanced');
+function closeMenu() {
+  menu.setAttribute('aria-expanded', 'false');
+  navigation.classList.remove('open');
+}
+menu.addEventListener('click', () => {
+  const open = menu.getAttribute('aria-expanded') !== 'true';
+  menu.setAttribute('aria-expanded', String(open));
+  navigation.classList.toggle('open', open);
+});
+navigation.addEventListener('click', (event) => {
+  if (event.target.closest('a')) closeMenu();
+});
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && menu.getAttribute('aria-expanded') === 'true') {
+    closeMenu();
+    menu.focus();
   }
 });
+const themeButton = document.getElementById('theme-toggle');
+const themeButtons = [themeButton, document.getElementById('floating-theme-toggle')];
+function setTheme(theme) {
+  document.body.dataset.theme = theme;
+  document.documentElement.dataset.theme = theme;
+  const label = `Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`;
+  themeButtons.forEach((button) => {
+    button.setAttribute('aria-label', label);
+    button.innerHTML = `<i class="ti ti-${theme === 'dark' ? 'sun' : 'moon'}" aria-hidden="true"></i>` +
+      (button.id === 'floating-theme-toggle' ? `<span class="floating-label">${label}</span>` : '');
+  });
+}
+let savedTheme;
+try { savedTheme = localStorage.getItem('portfolio-theme'); } catch {}
+setTheme(savedTheme === 'light' ? 'light' : 'dark');
+let themeTransitionRunning = false;
+themeButtons.forEach((button) => button.addEventListener('click', async (event) => {
+  if (themeTransitionRunning) return;
+  const theme = document.body.dataset.theme === 'dark' ? 'light' : 'dark';
+  const applyTheme = () => {
+    setTheme(theme);
+    try { localStorage.setItem('portfolio-theme', theme); } catch {}
+  };
+  if (!document.startViewTransition || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    applyTheme();
+    return;
+  }
+  const bounds = event.currentTarget.getBoundingClientRect();
+  const x = bounds.left + bounds.width / 2;
+  const y = bounds.top + bounds.height / 2;
+  const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+  themeTransitionRunning = true;
+  let transition;
+  try {
+    transition = document.startViewTransition(applyTheme);
+    await transition.ready;
+    await document.documentElement.animate(
+      { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+      { duration: 650, easing: 'cubic-bezier(.22, 1, .36, 1)', pseudoElement: '::view-transition-new(root)' }
+    ).finished;
+    await transition.finished;
+  } catch {
+    transition?.skipTransition();
+    applyTheme();
+  } finally {
+    themeTransitionRunning = false;
+  }
+}));
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+  document.querySelector('.image-trigger').addEventListener('click', () => lightbox.showModal());
+  document.querySelector('.lightbox-close').addEventListener('click', () => lightbox.close());
+  lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) lightbox.close();
+  });
+}
+const quoteForm = document.getElementById('quote-form');
+const quoteTotal = document.getElementById('quote-total');
+const quoteBreakdown = document.getElementById('quote-breakdown');
+const quoteInquiry = document.getElementById('quote-inquiry');
+const money = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+function updateQuote() {
+  const rate = 10;
+  const hours = document.getElementById('quote-hours').valueAsNumber;
+  if (!quoteForm.checkValidity() || !Number.isFinite(rate * hours)) {
+    quoteTotal.value = '—';
+    quoteBreakdown.textContent = 'Enter valid whole hours to calculate.';
+    quoteInquiry.href = 'mailto:emmanuel.fullstack.dev@gmail.com';
+    return;
+  }
+  const service = document.getElementById('quote-service').value;
+  const total = money.format(rate * hours);
+  quoteTotal.value = total;
+  quoteBreakdown.textContent = `${money.format(rate)} / hour × ${hours} hours`;
+  quoteInquiry.href = `mailto:emmanuel.fullstack.dev@gmail.com?subject=${encodeURIComponent(`Project inquiry: ${service}`)}&body=${encodeURIComponent(`Hi Emmanuel,\n\nI'd like to discuss ${service}.\nPlanning estimate: ${total} (${hours} hours at ${money.format(rate)}/hour).\nThis estimate uses your US$10 hourly rate and is subject to confirmed scope.\n\nProject scope:\nTimeline:\n`)}`;
+}
+quoteForm?.addEventListener('submit', (event) => { event.preventDefault(); updateQuote(); });
+quoteForm?.addEventListener('input', updateQuote);
+quoteForm?.addEventListener('change', updateQuote);
+
+const backToTop = document.getElementById('back-to-top');
+const impression = document.getElementById('impression-dialog');
+backToTop.addEventListener('click', (event) => {
+  event.preventDefault();
+  window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+  const deadline = performance.now() + 5000;
+  function showWhenAtTop() {
+    if (window.scrollY <= 8) {
+      if (!impression.open) impression.showModal();
+    } else if (performance.now() < deadline) {
+      requestAnimationFrame(showWhenAtTop);
+    }
+  }
+  requestAnimationFrame(showWhenAtTop);
+});
+document.querySelector('.impression-close').addEventListener('click', () => impression.close());
+impression.addEventListener('click', (event) => {
+  if (event.target === impression) impression.close();
+});
+document.getElementById('impression-contact').addEventListener('click', () => {
+  impression.close();
+  const contact = document.getElementById('contact');
+  if (contact) {
+    contact.setAttribute('tabindex', '-1');
+    contact.focus({ preventScroll: true });
+  }
+});
+const githubChart = document.getElementById('github-chart');
+if (githubChart) {
+  function showChartError() {
+    document.getElementById('github-chart-error').hidden = false;
+    document.querySelector('.github-chart-scroll').hidden = true;
+  }
+  githubChart.addEventListener('error', showChartError);
+  if (githubChart.complete && githubChart.naturalWidth === 0) showChartError();
+}
+// The rail follows content within the current page; top navigation changes pages.
+const sectionLinks = [...document.querySelectorAll('.section-rail a')];
+const visibleSections = new Set();
+let preferredSection = window.location.hash;
+function activateSection(hash) {
+  sectionLinks.forEach((link) => {
+    if (link.hash === hash) link.setAttribute('aria-current', 'location');
+    else link.removeAttribute('aria-current');
+  });
+}
+if (sectionLinks.some((link) => link.hash === preferredSection)) activateSection(preferredSection);
+sectionLinks.forEach((link) => link.addEventListener('click', () => {
+  preferredSection = link.hash;
+  activateSection(link.hash);
+}));
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const hash = `#${entry.target.id}`;
+    if (entry.isIntersecting) visibleSections.add(hash);
+    else visibleSections.delete(hash);
+  });
+  const current = visibleSections.has(preferredSection)
+    ? preferredSection
+    : sectionLinks.find((link) => visibleSections.has(link.hash))?.hash;
+  if (current) {
+    preferredSection = current;
+    activateSection(current);
+  }
+}, { rootMargin: '-20% 0px -60% 0px', threshold: 0 });
+sectionLinks.forEach((link) => sectionObserver.observe(document.querySelector(link.hash)));
+
+const floatingControls = document.getElementById('floating-controls');
+const navigationObserver = new IntersectionObserver(([entry]) => {
+  if (entry.isIntersecting && floatingControls.contains(document.activeElement)) {
+    themeButton.focus({ preventScroll: true });
+  }
+  floatingControls.hidden = entry.isIntersecting;
+}, { threshold: 0 });
+navigationObserver.observe(document.getElementById('primary-navigation'));
+
+// Allow subpixel rounding at the viewport edge; the hidden button retains its layout space.
+const scrollStart = document.getElementById('scroll-start');
+const footer = document.querySelector('footer');
+let wholeFooterVisible = false;
+let hasScrolledFromTop = false;
+const footerObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.target === footer) wholeFooterVisible = entry.isIntersecting && entry.intersectionRatio >= 0.99;
+    if (entry.target === scrollStart) hasScrolledFromTop = !entry.isIntersecting;
+  });
+  backToTop.hidden = !(wholeFooterVisible && hasScrolledFromTop);
+}, { threshold: [0, 0.99] });
+footerObserver.observe(footer);
+footerObserver.observe(scrollStart);

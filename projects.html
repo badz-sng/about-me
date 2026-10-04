@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Emmanuel Sunga, software engineer in Pampanga building Laravel, Vue.js, and React systems for institutions and everyday workflows." />
+    <title>Projects | Emmanuel Sunga</title>
+    <script>
+        try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') === 'light' ? 'light' : 'dark'; } catch {}
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' style='background:%237c6bff;border-radius:20px'><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-size='52' font-family='system-ui' font-weight='700' fill='white'>ES</text></svg>">
+</head>
+
+<body data-theme="dark" id="page-top">
+
+    <span id="scroll-start" aria-hidden="true"></span>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    <nav id="primary-navigation">
+        <a class="nav-logo" href="index.html"><span>ES</span> / Emmanuel Sunga</a>
+        <button class="menu-btn" aria-expanded="false" aria-controls="navigation" hidden><i class="ti ti-menu-2" aria-hidden="true"></i> Menu</button>
+        <ul class="nav-links" id="navigation">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="experience.html">Experience</a></li>
+            <li><a href="projects.html" aria-current="page">Projects</a></li>
+            <li><a href="github.html">GitHub</a></li>
+            <li><a href="quotation.html">Quotation</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme"><i class="ti ti-sun" aria-hidden="true"></i></button>
+        </div>
+    </nav>
+
+    <nav class="section-rail" aria-label="On this page">
+        <a href="#project-incident-report-ims" aria-label="Incident Report IMS" aria-current="location"><span class="rail-label">Incident Report IMS</span></a>
+        <a href="#project-filepilot" aria-label="FilePilot"><span class="rail-label">FilePilot</span></a>
+        <a href="#project-loan-management-system" aria-label="Loan Management System"><span class="rail-label">Loan Management System</span></a>
+        <a href="#project-deskr" aria-label="Deskr"><span class="rail-label">Deskr</span></a>
+        <a href="#project-keep" aria-label="Keep"><span class="rail-label">Keep</span></a>
+        <a href="#project-nasaan-ba" aria-label="Nasaan Ba?"><span class="rail-label">Nasaan Ba?</span></a>
+        <a href="#project-magkano-ba" aria-label="Magkano ba?"><span class="rail-label">Magkano ba?</span></a>
+        <a href="#project-bukas-ba" aria-label="Bukas ba?"><span class="rail-label">Bukas ba?</span></a>
+    </nav>
+
+    <aside class="floating-controls" id="floating-controls" aria-label="Quick navigation and theme" hidden>
+        <a class="floating-control" href="index.html" aria-label="Home"><i class="ti ti-home" aria-hidden="true"></i><span class="floating-label">Home</span></a>
+        <a class="floating-control" href="experience.html" aria-label="Experience"><i class="ti ti-briefcase" aria-hidden="true"></i><span class="floating-label">Experience</span></a>
+        <a class="floating-control" href="projects.html" aria-current="page" aria-label="Projects"><i class="ti ti-code" aria-hidden="true"></i><span class="floating-label">Projects</span></a>
+        <a class="floating-control" href="github.html" aria-label="GitHub"><i class="ti ti-brand-github" aria-hidden="true"></i><span class="floating-label">GitHub</span></a>
+        <a class="floating-control" href="quotation.html" aria-label="Quotation"><i class="ti ti-calculator" aria-hidden="true"></i><span class="floating-label">Quotation</span></a>
+        <a class="floating-control" href="contact.html" aria-label="Contact"><i class="ti ti-mail" aria-hidden="true"></i><span class="floating-label">Contact</span></a>
+        <button class="floating-control theme-btn" id="floating-theme-toggle" aria-label="Toggle theme"><i class="ti ti-sun" aria-hidden="true"></i><span class="floating-label">Change theme</span></button>
+    </aside>
+
+    <main class="page" id="main-content" tabindex="-1">
+        <section id="projects">
+            <p class="section-label">Notable projects</p>
+            <h1 class="section-title">Things I've built.</h1>
+
+            <div class="projects-grid fade-in">
+
+                <div class="project-card glass featured" id="project-incident-report-ims">
+                    <div>
+                        <p class="project-year">2024 • Best in Capstone</p>
+                        <p class="project-name">Incident Report IMS</p>
+                        <p class="project-desc">Dual-platform system (mobile + web) for public incident reporting and
+                            management —
+                            awarded Best in Capstone at La Verdad Christian College. Handles real-time reports, status
+                            tracking, and
+                            admin workflows.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Laravel</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">Mobile</span>
+                        </div>
+                    </div>
+                    <div class="project-visual">
+                        <button class="image-trigger" aria-label="Enlarge Incident Report IMS screenshot"><img src="irims.png" alt="Incident Report IMS application screenshot" loading="lazy" class="zoomable"><span>View screenshot <i class="ti ti-zoom-in" aria-hidden="true"></i></span></button>
+                    </div>
+                    <span class="project-badge">Award</span>
+                </div>
+
+                <div class="project-card glass" id="project-filepilot">
+                    <p class="project-year">2025</p>
+                    <p class="project-name">FilePilot</p>
+                    <p class="project-desc">Document Management IS for a Registrar's Office — automates status updates
+                        to document
+                        requestors and digitizes the entire request workflow.</p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card glass" id="project-loan-management-system">
+                    <p class="project-year">2024</p>
+                    <p class="project-name">Loan Management System</p>
+                    <p class="project-desc">Web-based system for scheduling and managing loan records with automated
+                        ledger report
+                        generation for financial transparency.</p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card glass" id="project-deskr">
+                    <p class="project-year">2023</p>
+                    <p class="project-name">Deskr</p>
+                    <p class="project-desc">Hot-desking platform for managing work desk allocation across multiple work
+                        environments — clean scheduling UI with multi-location support.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card glass" id="project-keep">
+                    <p class="project-year">2022</p>
+                    <p class="project-name">Keep</p>
+                    <p class="project-desc">Web-based password manager with custom user password hashing — built with a
+                        focus on
+                        security primitives and zero third-party auth libraries.</p>
+                    <div class="project-tags">
+                        <span class="tag">PHP</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">Security</span>
+                    </div>
+                </div>
+
+                <h3 class="projects-subheading">Personal projects / testing &amp; in progress</h3>
+                <div class="project-card glass" id="project-nasaan-ba">
+                    <p class="project-year">2026</p>
+                    <p class="project-name">Nasaan Ba?</p>
+                    <p class="project-desc">/ nasaAN ba / — Filipino for "Where is this?"</p>
+                    <p class="project-desc">Nasaan Ba? is a personal inventory and location management application designed to answer one simple question: Nasaan ba yung gamit ko? The user records personal belongings and the exact physical location where they are stored.</p>
+                    <div class="project-tags">
+                        <span class="tag">React.js</span>
+                    </div>
+                    <span class="project-badge">Available for testing</span>
+                    <p class="project-action"><a class="btn-outline" href="https://drive.google.com/drive/folders/1XC7Cl-jMU8T9UlZQdvjNf2ZMt7mc4Bp7?usp=sharing" target="_blank" rel="noopener noreferrer">Test Android APK <i class="ti ti-brand-android" aria-hidden="true"></i></a></p>
+                </div>
+
+                <div class="project-card glass" id="project-magkano-ba">
+                    <p class="project-year">2026</p>
+                    <p class="project-name">Magkano ba?</p>
+                    <p class="project-desc">/ mag-KA-no ba / — Filipino for "How much does this cost?"</p>
+                    <p class="project-desc">A lightweight, guest-first financial planning tool designed for everyday Filipinos. Whether starting a small business, launching a startup, or preparing for a major life goal, Magkano Ba? helps users surface realistic cost estimates before they commit — removing the guesswork from financial planning through AI-assisted suggestions tailored to the Philippine market.</p>
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <span class="project-badge">In progress</span>
+                </div>
+
+                <div class="project-card glass" id="project-bukas-ba">
+                    <p class="project-year">2026</p>
+                    <p class="project-name">Bukas ba?</p>
+                    <p class="project-desc">/ bu-KA-s ba / — Filipino for "Is it open?"</p>
+                    <p class="project-desc">Bukas Ba? is a hyperlocal, community-driven web and mobile application that answers one simple question: Is the store near me open right now?</p>
+                    <p class="project-desc">Designed for Filipino communities — from urban barangays to rural sitios — the app empowers everyday users (buyers) and store owners (sellers) to collaboratively maintain real-time open/closed status of nearby establishments, sari-sari stores, market stalls, and local businesses.</p>
+
+                    <div class="project-tags">
+                        <span class="tag">Laravel</span>
+                        <span class="tag">React.js</span>
+                        <span class="tag">MySQL</span>
+                    </div>
+                    <span class="project-badge">In progress</span>
+                </div>
+
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Emmanuel Sunga <a href="#page-top" class="btn-text" id="back-to-top" hidden>Back to top <i class="ti ti-arrow-up" aria-hidden="true"></i></a>
+    </footer>
+
+    <dialog class="lightbox" id="lightbox" aria-label="Incident Report IMS screenshot">
+        <button class="lightbox-close" aria-label="Close screenshot">Close <i class="ti ti-x" aria-hidden="true"></i></button>
+        <img src="irims.png" alt="Incident Report IMS application screenshot" class="lightbox-img">
+    </dialog>
+
+    <dialog class="impression-dialog" id="impression-dialog" aria-labelledby="impression-title">
+        <button class="impression-close" aria-label="Close first impression popup">Close <i class="ti ti-x" aria-hidden="true"></i></button>
+        <p class="section-label">Thanks for taking a look</p>
+        <h2 id="impression-title">how's my first impression?</h2>
+        <a class="btn-primary" href="contact.html#contact" id="impression-contact">let's work together <i class="ti ti-arrow-up-right" aria-hidden="true"></i></a>
+    </dialog>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
